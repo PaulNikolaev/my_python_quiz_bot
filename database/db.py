@@ -66,13 +66,27 @@ async def save_quiz_result(user_id: int, score: int, total_questions: int):
         await db.commit()
 
 
-async def get_top_scores():
+async def get_top_scores(limit: int = 5):
     """
-    Возвращает 5 лучших результатов всех игроков.
+    Возвращает N лучших результатов всех игроков.
     """
     async with aiosqlite.connect(DB_NAME) as db:
         db.row_factory = aiosqlite.Row
         cursor = await db.execute(
-            'SELECT user_id, score, total_questions, timestamp FROM quiz_results ORDER BY score DESC LIMIT 5'
+            'SELECT user_id, score, total_questions, timestamp FROM quiz_results ORDER BY score DESC, timestamp ASC LIMIT ?',
+            (limit,)
         )
         return await cursor.fetchall()
+
+
+async def get_user_latest_result(user_id: int):
+    """
+    Возвращает последний результат квиза для конкретного пользователя.
+    """
+    async with aiosqlite.connect(DB_NAME) as db:
+        db.row_factory = aiosqlite.Row
+        cursor = await db.execute(
+            'SELECT score, total_questions, timestamp FROM quiz_results WHERE user_id = ? ORDER BY timestamp DESC LIMIT 1',
+            (user_id,)
+        )
+        return await cursor.fetchone()
