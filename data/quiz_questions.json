@@ -1,22 +1,62 @@
 [
-    {
-        "question": "Какой метод используется для добавления элемента в конец списка?",
-        "options": ["append()", "insert()", "add()", "extend()"],
-        "correct_option_index": 0
-    },
-    {
-        "question": "Как называется тип данных, который является неизменяемым списком?",
-        "options": ["list", "tuple", "dict", "set"],
-        "correct_option_index": 1
-    },
-    {
-        "question": "Какая функция используется для вывода информации в консоль?",
-        "options": ["input()", "get()", "print()", "show()"],
-        "correct_option_index": 2
-    },
-    {
-        "question": "Как объявить переменную, которая не будет изменяться в ходе программы (константу)?",
-        "options": ["const MY_VAR = 1", "def MY_VAR = 1", "MY_VAR: final = 1", "В Python нет встроенных констант, их объявляют заглавными буквами."],
-        "correct_option_index": 3
-    }
+  {
+    "question": "Что такое Python?",
+    "options": [
+      "Язык программирования",
+      "Тип данных",
+      "Музыкальный инструмент",
+      "Змея на английском"
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "question": "Какой тип данных используется для хранения целых чисел?",
+    "options": [
+      "int",
+      "float",
+      "str",
+      "natural"
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "question": "Какой метод используется для добавления элемента в конец списка?",
+    "options": [
+      "append()",
+      "insert()",
+      "add()",
+      "extend()"
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "question": "Как называется тип данных, который является неизменяемым списком?",
+    "options": [
+      "list",
+      "tuple",
+      "dict",
+      "set"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "question": "Какая функция используется для вывода информации в консоль?",
+    "options": [
+      "input()",
+      "get()",
+      "print()",
+      "show()"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "question": "Как объявить переменную, которая не будет изменяться в ходе программы (константу)?",
+    "options": [
+      "const MY_VAR = 1",
+      "def MY_VAR = 1",
+      "MY_VAR: final = 1",
+      "В Python нет встроенных констант, их объявляют заглавными буквами."
+    ],
+    "correct_option_index": 3
+  }
 ]
