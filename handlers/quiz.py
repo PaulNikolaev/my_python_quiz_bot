@@ -118,7 +118,7 @@ async def process_quiz_answer(callback_query: CallbackQuery, bot: Bot):
         await callback_query.answer()
         correct_answer_text = question_data['options'][correct_answer_index]
         await callback_query.message.answer(
-            f"❌ **Неправильно.**\nПравильный ответ: `{correct_answer_text}`",
+            f"❌ **Неправильно.**",
             parse_mode="Markdown"
         )
         await update_quiz_state(user_id, current_question_index + 1, current_score)
