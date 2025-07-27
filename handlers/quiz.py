@@ -4,7 +4,7 @@ from aiogram.filters import Command
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.types import CallbackQuery
 
-from database.db import get_quiz_state, update_quiz_state
+from database.db import get_quiz_state, update_quiz_state, save_quiz_result
 from data.quiz_loader import load_quiz_questions
 
 # Загрузка вопросов
@@ -31,12 +31,18 @@ def generate_options_keyboard(question_index: int, options: list[str]) -> Inline
 async def send_question(bot: Bot, chat_id: int, user_id: int, question_index: int):
     """Отправляет вопрос и кнопки с вариантами ответов."""
     if question_index >= len(QUIZ_QUESTIONS):
-        # Если вопросов больше нет, завершаем квиз
+        # Если вопросов больше нет, сохраняем результат и завершаем квиз
         state = await get_quiz_state(user_id)
+        final_score = state['score']
+        total_questions = len(QUIZ_QUESTIONS)
+
+        # Сохраняем финальный результат
+        await save_quiz_result(user_id, final_score, total_questions)
+
         await bot.send_message(
             chat_id=chat_id,
             text=f"Поздравляю! Вы ответили на все вопросы. 🎉\n"
-                 f"Ваш финальный результат: **{state['score']}** из **{len(QUIZ_QUESTIONS)}**.",
+                 f"Ваш финальный результат: **{final_score}** из **{total_questions}**.",
             parse_mode="Markdown"
         )
         return
