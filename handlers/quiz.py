@@ -3,6 +3,7 @@ from aiogram import Router, types, F, Bot
 from aiogram.filters import Command
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.types import CallbackQuery
+import random
 
 from database.db import get_quiz_state, update_quiz_state, save_quiz_result
 from data.quiz_loader import load_quiz_questions
@@ -73,6 +74,8 @@ async def cmd_quiz(message: types.Message, bot: Bot):
     if not QUIZ_QUESTIONS:
         await message.answer("Извините, сейчас нет доступных вопросов для квиза.")
         return
+
+    random.shuffle(QUIZ_QUESTIONS)
 
     user_id = message.from_user.id
 

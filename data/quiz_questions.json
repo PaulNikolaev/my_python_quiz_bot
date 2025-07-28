@@ -1,62 +1,52 @@
 [
   {
-    "question": "Что такое Python?",
-    "options": [
-      "Язык программирования",
-      "Тип данных",
-      "Музыкальный инструмент",
-      "Змея на английском"
-    ],
-    "correct_option_index": 0
-  },
-  {
-    "question": "Какой тип данных используется для хранения целых чисел?",
-    "options": [
-      "int",
-      "float",
-      "str",
-      "natural"
-    ],
-    "correct_option_index": 0
-  },
-  {
-    "question": "Какой метод используется для добавления элемента в конец списка?",
-    "options": [
-      "append()",
-      "insert()",
-      "add()",
-      "extend()"
-    ],
-    "correct_option_index": 0
-  },
-  {
-    "question": "Как называется тип данных, который является неизменяемым списком?",
-    "options": [
-      "list",
-      "tuple",
-      "dict",
-      "set"
-    ],
-    "correct_option_index": 1
-  },
-  {
-    "question": "Какая функция используется для вывода информации в консоль?",
-    "options": [
-      "input()",
-      "get()",
-      "print()",
-      "show()"
-    ],
+    "question": "Какое ключевое слово используется для определения функции в Python?",
+    "options": ["func", "define", "def", "function"],
     "correct_option_index": 2
   },
   {
-    "question": "Как объявить переменную, которая не будет изменяться в ходе программы (константу)?",
-    "options": [
-      "const MY_VAR = 1",
-      "def MY_VAR = 1",
-      "MY_VAR: final = 1",
-      "В Python нет встроенных констант, их объявляют заглавными буквами."
-    ],
-    "correct_option_index": 3
+    "question": "Как называется тип данных, который хранит упорядоченную, неизменяемую последовательность элементов?",
+    "options": ["list", "tuple", "set", "dict"],
+    "correct_option_index": 1
+  },
+  {
+    "question": "Каким оператором в Python можно получить остаток от деления?",
+    "options": ["//", "/", "%", "**"],
+    "correct_option_index": 2
+  },
+  {
+    "question": "Как правильно объявить переменную, которой не присвоено значение?",
+    "options": ["var = None", "var = null", "var = 0", "var = ''"],
+    "correct_option_index": 0
+  },
+  {
+    "question": "Какой метод используется для добавления нового элемента в конец списка?",
+    "options": ["add()", "insert()", "append()", "push()"],
+    "correct_option_index": 2
+  },
+  {
+    "question": "Какая функция преобразует строку в целое число?",
+    "options": ["str()", "float()", "int()", "list()"],
+    "correct_option_index": 2
+  },
+  {
+    "question": "Какой цикл в Python используется для перебора последовательностей?",
+    "options": ["while", "do-while", "for", "loop"],
+    "correct_option_index": 2
+  },
+  {
+    "question": "Как называется структура данных, которая хранит пары 'ключ-значение'?",
+    "options": ["list", "tuple", "dict", "set"],
+    "correct_option_index": 2
+  },
+  {
+    "question": "Что будет выведено в результате выполнения `print(10 / 2)`?",
+    "options": ["5", "5.0", "10", "2"],
+    "correct_option_index": 1
+  },
+  {
+    "question": "Как называется концепция ООП, позволяющая использовать один и тот же метод для разных классов, которые по-разному его реализуют?",
+    "options": ["наследование", "инкапсуляция", "полиморфизм", "абстракция"],
+    "correct_option_index": 2
   }
 ]
