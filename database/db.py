@@ -6,7 +6,7 @@ DB_NAME = "quiz_bot.db"
 
 async def create_table():
     """
-    Инициализация базы данных, сли она еще не существует
+    Инициализация базы данных, если она еще не существует
     """
     async with aiosqlite.connect(DB_NAME) as db:
         await db.execute('''
